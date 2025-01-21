@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage de Keren & Joseph</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?wedding') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        .countdown {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .rsvp-form {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #ff4081;
+            color: white;
+            cursor: pointer;
+        }
+        .map-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue au Mariage de Keren & Joseph</h1>
+        <h2>Le 18 Mai 2025</h2>
+        <p>Rejoignez-nous pour célébrer notre union dans un cadre magnifique.</p>
+        <div class="countdown" id="countdown"></div>
+        <h3>Confirmez votre présence</h3>
+        <form class="rsvp-form">
+            <input type="text" placeholder="Votre Nom" required>
+            <input type="email" placeholder="Votre Email" required>
+            <button type="submit">Envoyer</button>
+        </form>
+        <div class="map-container">
+            <h3>Lieu de l'événement</h3>
+            <p>Hilton Strasbourg</p>
+            <iframe
+                width="600"
+                height="450"
+                style="border:0"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.2614442477685!2d7.758353315674178!3d48.59750207926813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c97e7bfb6e17%3A0x8f34c93e2d39dfb9!2sHilton%20Strasbourg!5e0!3m2!1sen!2sfr!4v1705854534685!5m2!1sen!2sfr">
+            </iframe>
+        </div>
+    </div>
+    
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date('2025-05-18T00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerText = `Jours restants : ${days}`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
